@@ -8,10 +8,9 @@ function App() {
   const { theme } = useContext(ThemeContext)
 
   return( 
-    <div className={`h-full w-full mx-auto py-2 ${theme === "dark" ? "dark" : ""}`}>
-  <RouterProvider router={router} />
-
-  </div>
+    <div className={`h-screen py-2 ${theme === "dark" ? "dark" : ""}`}>
+      <RouterProvider router={router} />
+    </div>
   )
 }
 
