@@ -4,7 +4,7 @@ import SignupForm from "../pages/signup";
 import Hello from "../pages/index/Hello";
 import AccountLayout from "../layouts/account";
 import LiveGames from "../pages/news/sports";
-import MatchModal from "../pages/match/MatchModal";
+import MatchModal from "../pages/modals/MatchModal";
 
 
 const router = createBrowserRouter([
