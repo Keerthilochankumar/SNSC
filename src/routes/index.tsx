@@ -5,8 +5,8 @@ import Hello from "../pages/index/Hello";
 import AccountLayout from "../layouts/account";
 import LiveGames from "../pages/news/sports";
 import MatchModal from "../pages/modals/MatchModal";
-
-
+import ArticleModal from "../pages/modals/ArticleModal";
+import Articles from "../pages/news/articles";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,12 +15,16 @@ const router = createBrowserRouter([
       {index:true, element: <Hello />},
       {
         path: "matches",
-        element: <LiveGames/>,
+        element:<> <LiveGames/> <Articles/> </>,
         children: [
           { index: true, element:<></> },
           {
             path: ":matchID",
             element: <MatchModal />,
+          },
+          {
+            path: ":articleID",
+            element: <ArticleModal />,
           }
         ],
       },
