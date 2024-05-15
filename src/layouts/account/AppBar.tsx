@@ -1,5 +1,5 @@
-/* eslint-disable no-empty-pattern */
 /* eslint-disable no-var */
+/* eslint-disable no-empty-pattern */
 import { useState, useContext, Fragment } from 'react'
 import { ThemeContext } from "../../context/theme";
 import { Disclosure, Menu, Transition, Switch } from '@headlessui/react'
@@ -10,6 +10,7 @@ import { Link } from "react-router-dom"
 const userNavigation = [
   { name: 'Sign out', href: '/logout' },
 ]
+const userData = JSON.parse(localStorage.getItem('userData')|| '{}');
 
 const classNames = (...classes: string[]): string => classes.filter(Boolean).join(' ');
 
@@ -35,7 +36,7 @@ document.documentElement.classList.remove("dark");
       <Disclosure as="nav" className="border-b border-slate-300">
         {({  }) => (
             
-            <div>
+          <div>
             <div className="flex px-6 justify-between">
               <div className="flex items-center">
               <Link to='/'>  <div className="flex">
@@ -46,7 +47,7 @@ document.documentElement.classList.remove("dark");
                   />
                   
                 </div> </Link>
-                <h1 className='text-justify font-semibold text-xl'>SNSC</h1>    
+                <h1 className='text-justify font-semibold text-xl'>SNSC</h1>
               </div>
               <Switch
         checked={enabled}
@@ -61,6 +62,7 @@ document.documentElement.classList.remove("dark");
                 pointer-events-none inline-block h-[20px] w-[20px] transform rounded-full bg-white  ring-0 transition duration-200 ease-in-out`}
             />
           </Switch>
+          { (userData.email)?
               <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
                   <Menu as="div" className="relative ml-3">
@@ -78,7 +80,7 @@ document.documentElement.classList.remove("dark");
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1  ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1  ring-1 ring-black ring-opacity-5 focus:outline-none">
                         {userNavigation.map((item) => (
                           <Menu.Item key={item.name}>
                             {({ active }) => (
@@ -93,12 +95,16 @@ document.documentElement.classList.remove("dark");
                               </a>
                             )}
                           </Menu.Item>
+
+
                         ))}
                       </Menu.Items>
                     </Transition>
                   </Menu>
                 </div>
               </div>
+            :""
+}
             </div>
           </div>
         )}
