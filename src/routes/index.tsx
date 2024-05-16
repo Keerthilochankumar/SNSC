@@ -24,9 +24,10 @@ const router = createBrowserRouter([
             element: <MatchModal />,
           },
           {
-            path: ":articleID",
+            path: "articles/:articleID",
             element: <ArticleModal />,
-          }
+          },
+        
         ],
       },
     ]
