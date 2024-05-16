@@ -1,31 +1,17 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-var */
-/* eslint-disable prefer-const */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable prefer-const */
 import { Link, Outlet } from "react-router-dom";
 import { useArticlesState } from "../../context/Articles/context";
-import { useContext, useEffect, useState } from "react";
+import {  useEffect } from "react";
 import { useArticlesDispatch } from "../../context/Articles/context";
 import { fetchArticles } from "../../context/Articles/actions";
-import { ThemeContext } from "../../context/theme";
+
 
 
 
 export default function Articles() {
-    const { theme, setTheme } = useContext(ThemeContext)
-    const [enabled, setEnabled] = useState(theme === 'dark')
-    const toggleTheme = () => {
-      if(theme==="light"){
-       var newTheme = "dark";
-  document.documentElement.classList.add("dark");
-  }
-  else{
-  newTheme="light";
-  document.documentElement.classList.remove("dark");
-  }
-      setEnabled(!enabled)
-      setTheme(newTheme)
-    }
+
+
     const ArticleDispatch = useArticlesDispatch();
     useEffect(() => {
         const test = fetchArticles(ArticleDispatch);
