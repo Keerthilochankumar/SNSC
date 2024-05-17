@@ -1,14 +1,13 @@
-import React from 'react';
-import SigninForm from "./SigninForm"
+import React from "react";
+import SigninForm from "./SigninForm";
 
 const Signin: React.FC = () => {
- 
   return (
-    <div >
-      <div >
+    <div>
+      <div>
         <SigninForm />
       </div>
-      </div>
+    </div>
   );
-}
+};
 export default Signin;
