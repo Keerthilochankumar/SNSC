@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Outlet } from "react-router-dom";
 import AppBar from "./AppBar";
-import LiveGames from "../../pages/news/sports";
-import Articles from "../../pages/news/articles";
+
 
 const AccountLayout = () => {
   return (
