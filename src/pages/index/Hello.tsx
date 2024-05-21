@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../assets/images/hero.jpg";
+import Logo from "../../assets/images/hero.png";
 import { Link } from "react-router-dom";
 const Hello: React.FC = () => {
   return (
