@@ -22,9 +22,10 @@ const Hello: React.FC = () => {
             <p className="mb-8 leading-relaxed dark:text-white">
               Are you a  enthusiast who wants to keep up with the most
               recent reports, results, and evaluations from the sports world? If
-              the answer is yes, you've found the proper site.
+              the answer is yes, you've found the proper site!
+              Stay Ahead of the Game with the Latest Sports News and Updates!
             </p>{" "}
-            <a className="font-bold dark:text-white"> Welcome to SNSC</a>
+            <a className="font-bold dark:text-white"> Welcome to SNSC </a>
             <br/>
             <div className="flex justify-center">
               <Link to="/signin">
