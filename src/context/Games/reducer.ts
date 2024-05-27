@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-type Games = {
+export type Games = {
   id: number;
   name: string;
   location: string;
