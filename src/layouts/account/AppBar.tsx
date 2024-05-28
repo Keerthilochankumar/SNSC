@@ -8,9 +8,9 @@ import Logo from "../../assets/images/logo.jpg";
 import { Link } from "react-router-dom";
 
 const userNavigation = [
-  { name: 'Preferences', href: "/home/preferences" },
-  { name: "Reset Password", href: "resetPassword" },
-  { name: "Sign out", href: "/logout" }
+  { name: "Preferences", href: "/home/preferences" },
+  { name: "Reset Password", href: "/home/resetPassword" },
+  { name: "Sign out", href: "/logout" },
 ];
 const userData = JSON.parse(localStorage.getItem("userData") || "{}");
 

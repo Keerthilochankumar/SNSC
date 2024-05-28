@@ -1,11 +1,12 @@
-import { API_ENDPOINT } from "../config/constants"
+import { toast } from "react-toastify";
+import { API_ENDPOINT } from "../config/constants";
 
 export type Preferences = {
     userPreferences: {
-        games: string[],
-        teams: number[]
-    }
-}
+        games: string[];
+        teams: number[];
+    };
+};
 
 export const fetchPreferences = async () => {
     const token = localStorage.getItem("authToken");
@@ -13,23 +14,28 @@ export const fetchPreferences = async () => {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer " + token
+            Authorization: "Bearer " + token,
         },
     });
     const data: { preferences: Preferences } = await res.json();
     return data.preferences;
-}
+};
 
 export const updatePreferences = async (preferences: Preferences) => {
     const token = localStorage.getItem("authToken");
-    await fetch(`${API_ENDPOINT}/user/preferences`, {
+    const res = await fetch(`${API_ENDPOINT}/user/preferences`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer " + token
+            Authorization: "Bearer " + token,
         },
         body: JSON.stringify({
-            preferences: preferences
-        })
+            preferences: preferences,
+        }),
     });
-}
+    if (res.ok) {
+        toast.success("Preferences Updated!!")
+    } else {
+        toast.error("Preferences Update Failed, Try Again");
+    }
+};
