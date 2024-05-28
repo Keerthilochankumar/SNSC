@@ -44,11 +44,12 @@ const Appbar = () => {
                   {" "}
                   <div className="flex">
                     <img className="h-8 w-auto" src={Logo} alt="SNSC" />
+
+                    <h1 className="text-justify px-2 py-2 font-semibold text-xl">
+                      SNSC
+                    </h1>
                   </div>{" "}
                 </Link>
-                <h1 className="text-justify px-2 py-2 font-semibold text-xl">
-                  SNSC
-                </h1>
               </div>
               <Switch
                 checked={enabled}
